@@ -21,15 +21,15 @@
    }
 </style>
 <p>
-  <strong>Name:</strong>
-  <%= @student.name %>
+  <h3><strong>Name:</strong>
+  <%= @student.name %></h3>
 </p>
 
 <p>
-  <strong>Address:</strong>
-  <%= @student.address %>
+  <h3><strong>Address:</strong>
+  <%= @student.address %></h3>
 </p>
 
-<%= link_to 'Edit', edit_student_path(@student) %> |
-<%= link_to 'Back', students_path %>
-<%= link_to "Delete", student_path(@student.id), method: :delete %>
+<%= link_to 'Edit', edit_student_path(@student),class: "btn btn-info" %>
+<%= link_to "Delete", student_path(@student.id), method: :delete,class: "btn btn-info" %>
+<%= link_to 'Back', students_path,class: "btn btn-info" %>

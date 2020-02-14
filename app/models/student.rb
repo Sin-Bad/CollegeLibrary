@@ -1,3 +1,4 @@
 class Student < ApplicationRecord
-  has_many :book
+  validates :name, :address,  presence: true
+  has_one :book
 end

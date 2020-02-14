@@ -19,13 +19,14 @@
     color: #66FCF1;
    }
 </style>
-<h1>Student: <%= @book.student.name %></h1>
+<h3>Student: <%= @book.student.name %><br><br>
 
-<h3><%= @book.bookname %></h3>
+BookName:<%= @book.bookname %><br><br>
 
-<p><%= @book.authorname %></p>
-<p><%= @book.description %></p>
+AuthorName:<%= @book.authorname %><br><br>
+Description:<%= @book.description %><br><br>
+Genre:<%= @book.gen %><br></h3><br>
 
-<%= link_to "Edit", edit_book_path(@book.id) %>
-<%= link_to "Delete", book_path(@book.id), method: :delete %>
-<%= link_to "Back", books_path %>
+<%= link_to "Edit", edit_book_path(@book.id), class:"btn btn-info" %>
+<%= link_to "Delete", book_path(@book.id), method: :delete, class:"btn btn-info" %>
+<%= link_to "Back", books_path, class:"btn btn-info" %>

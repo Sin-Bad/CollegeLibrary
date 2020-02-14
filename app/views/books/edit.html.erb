@@ -20,6 +20,6 @@
    }
 </style>
   <%= form_for @book do |f| %>
-  <%= f.select :student_id, Student.all.map {|c| [c.name,c.id]} %>
-  <%= f.submit "Add Student" %>
+  <h3>Select Student:</h3><br><%= f.select :student_id, Student.all.map {|c| [c.name,c.id]} %>
+  <%= f.submit "Add Student", class: "btn btn-info" %>
   <% end %>

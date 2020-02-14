@@ -21,14 +21,16 @@
 </style>
 <%= form_for @book do |f| %>
 
-  <%= f.label :BookName %><br>
+  <h3><%= f.label :BookName %><br>
   <%= f.text_field :bookname %><br>
   <%= f.label :AuthorName %><br>
   <%= f.text_field :authorname %><br>
   <%= f.label :Description %><br>
-  <%= f.text_area :description %>
+  <%= f.text_area :description %><br>
+  <%= f.label :Genre %><br>
+  <%= f.text_field :gen %></h3>
   <br><br>
-  Select Student
+  <h3>Select Student</h3>
   <%= f.select :student_id, Student.all.map {|c| [c.name,c.id,]} %> <br><br><br>
   <%= f.submit "Add Book",class: "btn btn-info" %>
 
