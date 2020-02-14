@@ -6,13 +6,13 @@
   <div class="collapse navbar-collapse" id="navbarColor02">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <h5><%= link_to "BOOKS", "/books", class: 'link-to-text-color' %></h5>
+        <h5 class="nav-item nav-link active"><%= link_to "BOOKS", "/books", class: 'link-to-text-color' %></h5>
       </li>
       <li class="nav-item">
-        <h5><%= link_to 'STUDENTS', "/students", class: 'link-to-text-color'  %></h5>
+        <h5 class="nav-item nav-link active"><%= link_to 'STUDENTS', "/students", class: 'link-to-text-color'  %></h5>
       </li>
       <li class="nav-item">
-        <h5><%= link_to 'ADD_BOOKS', "/books/new", class: 'link-to-text-color' %></h5>
+        <h5 class="nav-item nav-link active"><%= link_to 'ADD_BOOKS', "/books/new", class: 'link-to-text-color' %></h5>
       </li>
     </ul>
   </div>
@@ -42,8 +42,8 @@
 </style>
 <table class="table table-bordered table-hover">
   <tr>
-    <th><h4>BookName</h4></th>
-    <th><h4>AuthorName</h4></th>
+    <th><h4>Book Name</h4></th>
+    <th><h4>Author Name</h4></th>
     <th><h4>Description</h4></th>
     <th><h4>Student</h4></th>
     <th></th>
@@ -56,6 +56,7 @@
     <td><h5><%= book.authorname %></h5></td>
     <td><h5><%= book.description %></h5></td>
     <td><h5><%= book.student.name %></h5></td>
-    <td><%= link_to 'Assign Book', edit_book_path(book) %></td>
+    <td><%= link_to 'Assign Book', edit_book_path(book), class: "btn btn-info"  %></td>
+    <td><%= link_to 'More', book_path(book), class: "btn btn-info" %></td>
   </tr>
 <% end %>

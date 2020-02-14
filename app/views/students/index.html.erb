@@ -52,6 +52,7 @@
     <tr>
       <td><h5><%= student.name %></h5></td>
       <td><h5><%= student.address %></h5></td>
+      <td><%= link_to 'More', student_path(student), class: "btn btn-info" %></td>
     </tr>
   <% end %>
 </table>
