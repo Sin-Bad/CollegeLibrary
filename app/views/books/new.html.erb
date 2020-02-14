@@ -21,15 +21,15 @@
 </style>
 <%= form_for @book do |f| %>
 
-  <%= f.label :BookName %>
+  <%= f.label :BookName %><br>
   <%= f.text_field :bookname %><br>
-  <%= f.label :AuthorName %>
+  <%= f.label :AuthorName %><br>
   <%= f.text_field :authorname %><br>
-  <%= f.label :Description %>
+  <%= f.label :Description %><br>
   <%= f.text_area :description %>
-  <br>
+  <br><br>
   Select Student
-  <%= f.select :student_id, Student.all.map {|c| [c.name,c.id,]}, {:include_blank => 'None'} %> <br>
-  <%= f.submit "Add Book" %>
+  <%= f.select :student_id, Student.all.map {|c| [c.name,c.id,]} %> <br><br><br>
+  <%= f.submit "Add Book",class: "btn btn-info" %>
 
   <% end %>
