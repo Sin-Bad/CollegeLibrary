@@ -19,13 +19,13 @@
     color: #66FCF1;
    }
 </style>
-<h3>Student: <%= @book.student.name %><br><br>
+<h5>Student: <%= @book.student.name %><br><br>
 
 BookName:<%= @book.bookname %><br><br>
 
 AuthorName:<%= @book.authorname %><br><br>
 Description:<%= @book.description %><br><br>
-Genre:<%= @book.gen %><br></h3><br>
+Genre:<%= @book.gen %><br></h5><br>
 
 <%= link_to "Edit", edit_book_path(@book.id), class:"btn btn-info" %>
 <%= link_to "Delete", book_path(@book.id), method: :delete, class:"btn btn-info" %>
