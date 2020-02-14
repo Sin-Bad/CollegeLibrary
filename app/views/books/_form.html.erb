@@ -1,12 +1,14 @@
+
 <%= form_for @book do |f| %>
 
   <%= f.label :BookName %>
-  <%= f.text_field :bookname %>
+  <%= f.text_field :bookname %><br>
   <%= f.label :AuthorName %>
-  <%= f.text_field :authorname %>
+  <%= f.text_field :authorname %><br>
   <%= f.label :Description %>
   <%= f.text_area :description %>
-
+  <br>
+  <%= f.select :student_id, Student.all.map {|c| [c.name,c.id]} %>
   <%= f.submit "Add Book" %>
 
-<% end %>
+  <% end %>

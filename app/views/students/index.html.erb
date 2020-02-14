@@ -6,13 +6,13 @@
   <div class="collapse navbar-collapse" id="navbarColor02">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <h5><%= link_to "BOOKS", "/books", class: 'link-to-text-color' %></h5>
+        <h5 class="nav-item nav-link active"><%= link_to "BOOKS", "/books", class: 'link-to-text-color' %></h5>
       </li>
       <li class="nav-item">
-        <h5><%= link_to 'STUDENTS', "/students", class: 'link-to-text-color'  %></h5>
+        <h5 class="nav-item nav-link active"><%= link_to 'STUDENTS', "/students", class: 'link-to-text-color' %></h5>
       </li>
       <li class="nav-item">
-        <h5><%= link_to 'ADD_BOOKS', "/books/new", class: 'link-to-text-color' %></h5>
+        <h5 class="nav-item nav-link active"><%= link_to 'ADD_STUDENTS', "/students/new", class: 'link-to-text-color' %></h5>
       </li>
     </ul>
   </div>
@@ -27,7 +27,6 @@
     border-collapse: collapse;
     width: 100%;
   }
-
   th, td {
     text-align: left;
     padding: 8px;
@@ -37,25 +36,22 @@
   tr:nth-child(odd){background-color: white}
 
   th {
-    background-color: #66FCF1;    color: white;
-  }
+    background-color: #66FCF1;
+    color: white;}
+
 </style>
 <table class="table table-bordered table-hover">
   <tr>
-    <th><h4>BookName</h4></th>
-    <th><h4>AuthorName</h4></th>
-    <th><h4>Description</h4></th>
-    <th><h4>Student</h4></th>
+    <th><h4>Student_Name</h4></th>
+    <th><h4>Address</h4></th>
     <th></th>
     <th></th>
 
   </tr>
-  <% @book.each do |book| %>
-  <tr>
-    <td><h5><%= book.bookname %></h5></td>
-    <td><h5><%= book.authorname %></h5></td>
-    <td><h5><%= book.description %></h5></td>
-    <td><h5><%= book.student.name %></h5></td>
-    <td><%= link_to 'Assign Book', edit_book_path(book) %></td>
-  </tr>
-<% end %>
+  <% @students.each do |student| %>
+    <tr>
+      <td><h5><%= student.name %></h5></td>
+      <td><h5><%= student.address %></h5></td>
+    </tr>
+  <% end %>
+</table>

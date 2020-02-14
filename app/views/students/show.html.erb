@@ -1,3 +1,4 @@
+<p id="notice"><%= notice %></p>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -19,17 +20,15 @@
     color: #66FCF1;
    }
 </style>
-<%= form_for @book do |f| %>
+<p>
+  <strong>Name:</strong>
+  <%= @student.name %>
+</p>
 
-  <%= f.label :BookName %>
-  <%= f.text_field :bookname %><br>
-  <%= f.label :AuthorName %>
-  <%= f.text_field :authorname %><br>
-  <%= f.label :Description %>
-  <%= f.text_area :description %>
-  <br>
-  Select Student
-  <%= f.select :student_id, Student.all.map {|c| [c.name,c.id,]}, {:include_blank => 'None'} %> <br>
-  <%= f.submit "Add Book" %>
+<p>
+  <strong>Address:</strong>
+  <%= @student.address %>
+</p>
 
-  <% end %>
+<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Back', students_path %>

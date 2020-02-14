@@ -19,17 +19,8 @@
     color: #66FCF1;
    }
 </style>
-<%= form_for @book do |f| %>
 
-  <%= f.label :BookName %>
-  <%= f.text_field :bookname %><br>
-  <%= f.label :AuthorName %>
-  <%= f.text_field :authorname %><br>
-  <%= f.label :Description %>
-  <%= f.text_area :description %>
-  <br>
-  Select Student
-  <%= f.select :student_id, Student.all.map {|c| [c.name,c.id,]}, {:include_blank => 'None'} %> <br>
-  <%= f.submit "Add Book" %>
+<%= render 'form', student: @student %>
 
-  <% end %>
+<%= link_to 'Show', @student %> |
+<%= link_to 'Back', students_path %>

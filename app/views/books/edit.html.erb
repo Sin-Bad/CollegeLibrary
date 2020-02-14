@@ -1,3 +1,25 @@
-<h1>Books#edit</h1>
-<p>Find me in app/views/books/edit.html.erb</p>
-<%= render 'form' %>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor02">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <h5><%= link_to "BOOKS", "/books", class: 'link-to-text-color' %></h5>
+      </li>
+      <li class="nav-item">
+        <h5><%= link_to 'STUDENTS', "/students", class: 'link-to-text-color'  %></h5>
+      </li>
+    </ul>
+  </div>
+</nav>
+<style>
+  .link-to-text-color{
+    color: #66FCF1;
+   }
+</style>
+  <%= form_for @book do |f| %>
+  <%= f.select :student_id, Student.all.map {|c| [c.name,c.id]} %>
+  <%= f.submit "Add Student" %>
+  <% end %>
